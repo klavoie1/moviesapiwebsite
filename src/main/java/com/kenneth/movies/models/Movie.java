@@ -13,7 +13,7 @@ public class Movie {
     @Id
     private ObjectId id;
 
-    private String imbdId;
+    private String imdbId;
 
     private String title;
 
@@ -30,9 +30,10 @@ public class Movie {
     @DocumentReference
     private List<Review> reviewIds;
 
-    public Movie(ObjectId id, String imbdId, String title, String releaseDate, String trailerLink, String poster, List<String> genres, List<String> backdrops, List<Review> reviewIds) {
+    public Movie(ObjectId id, String imdbId, String title, String releaseDate, String trailerLink, String poster,
+                 List<String> genres, List<String> backdrops, List<Review> reviewIds) {
         this.id = id;
-        this.imbdId = imbdId;
+        this.imdbId = imdbId;
         this.title = title;
         this.releaseDate = releaseDate;
         this.trailerLink = trailerLink;
@@ -49,9 +50,9 @@ public class Movie {
 
     public ObjectId getId() { return id; }
 
-    public void setImbdId(String imbdId) { this.imbdId = imbdId; }
+    public void setImdbId(String imdbId) { this.imdbId = imdbId; }
 
-    public String getImbdId() { return imbdId; }
+    public String imdbId() { return imdbId; }
 
     public void setTitle(String title) { this.title = title; }
 
