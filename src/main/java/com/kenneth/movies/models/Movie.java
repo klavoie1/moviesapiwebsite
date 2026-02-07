@@ -1,8 +1,5 @@
 package com.kenneth.movies.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
@@ -10,10 +7,7 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
-@Document(collection = "movies")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Document(collection = "movie")
 public class Movie {
 
     @Id
@@ -35,4 +29,55 @@ public class Movie {
 
     @DocumentReference
     private List<Review> reviewIds;
+
+    public Movie(ObjectId id, String imbdId, String title, String releaseDate, String trailerLink, String poster, List<String> genres, List<String> backdrops, List<Review> reviewIds) {
+        this.id = id;
+        this.imbdId = imbdId;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.trailerLink = trailerLink;
+        this.poster = poster;
+        this.genres = genres;
+        this.backdrops = backdrops;
+        this.reviewIds = reviewIds;
+    }
+
+    public Movie() {
+    }
+
+    public void setId(ObjectId id) { this.id = id; }
+
+    public ObjectId getId() { return id; }
+
+    public void setImbdId(String imbdId) { this.imbdId = imbdId; }
+
+    public String getImbdId() { return imbdId; }
+
+    public void setTitle(String title) { this.title = title; }
+
+    public String getTitle() { return title; }
+
+    public void setReleaseDate(String releaseDate) { this.releaseDate = releaseDate; }
+
+    public String getReleaseDate() { return releaseDate; }
+
+    public void setTrailerLink(String trailerLink) { this.trailerLink = trailerLink; }
+
+    public String getTrailerLink() { return trailerLink; }
+
+    public void setPoster(String poster) { this.poster = poster; }
+
+    public String getPoster() { return poster; }
+
+    public void setGenres(List<String> genres) { this.genres = genres; }
+
+    public List<String> getGenres() { return genres; }
+
+    public void setBackdrops(List<String> backdrops) { this.backdrops = backdrops; }
+
+    public List<String> getBackdrops() { return backdrops; }
+
+    public void setReviewIds(List<Review> reviewIds) { this.reviewIds = reviewIds; }
+
+    public List<Review> getReviewIds() { return reviewIds; }
 }
