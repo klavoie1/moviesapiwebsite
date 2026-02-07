@@ -1,4 +1,4 @@
-package com.kenneth.movies;
+package com.kenneth.movies.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
